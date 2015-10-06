@@ -20,7 +20,7 @@ def _get_meta_contents_by_property(soup, prop):
 def parse_contents(html):
     soup = bs4.BeautifulSoup(html, 'html.parser')
     title = soup.title.text if soup.title else None
-    description = soup.description.text if soup.description else None
+    description = _get_meta_contents_by_name(soup, "description")
     author = _get_meta_contents_by_name(soup, "author")
 
     og_title = _get_meta_contents_by_property(soup, "og:title")
