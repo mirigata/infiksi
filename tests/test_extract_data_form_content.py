@@ -52,3 +52,12 @@ class ContentExtractionTest(TestCase):
                           'only written in books – that fair and most devoted carrier of text – but also on walls, '
                           'where they appear in a...')
 
+        self.assertEquals(result.og_image,
+                          'https://medievalbooks.files.wordpress.com/2015/09/ambroggio_lorenzetti_detail.jpg?w=1200')
+        self.assertEquals(result.og_image_width, 1200)
+        self.assertEquals(result.og_image_height, 700)
+
+        self.assertEquals(result.thumbnail_url,
+                          'https://medievalbooks.files.wordpress.com/2015/09/ambroggio_lorenzetti_detail.jpg?w=1200')
+        self.assertEquals(result.thumbnail_width, 1200)
+        self.assertEquals(result.thumbnail_height, 700)
