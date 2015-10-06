@@ -1,0 +1,1234 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Python: retrieving metadata from websites</title>
+
+	<meta name="description" content=>
+
+
+	<meta property="og:site_name" content="Livecoding.tv"/>
+	<meta property="og:title" content="watch people code products live"/>
+	<meta property="og:description" content="Python: retrieving metadata from websites"/>
+	<meta property="og:image" content="/static/img/userdashboard-img.png?h=96c35f43"/>
+	<meta property="og:url" content="/publysher/"/>
+	<meta property="og:type" content="streaming platform"/>
+
+
+
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+
+	<link type="text/css" rel="stylesheet" href="/static/css/stream.css?h=628f5ffd">
+
+
+	<link rel="stylesheet" href="/static/candy-chat/jquery.jscrollpane.css" />
+	<link rel="stylesheet" href="/static/candy-chat/highlight.min.css">
+
+	<link rel="stylesheet" href="/static/candy-chat/default.css" />
+	<link rel="stylesheet" type="text/css" href="/static/candy-chat/namecomplete/candy.css" />
+	<link rel="stylesheet" type="text/css" href="/static/candy-chat/colors-xhtml/candy.css" />
+	<link rel="stylesheet" href="/static/candy-chat/overrides.css" />
+
+	<style type="text/css">
+		#candy .candy-popup-opener { float: right; border: 0px none; }
+		#candy .candy-popup-opener a { color: #ccc; font-size: 9px; }
+	</style>
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/static/js/jquery-latest.min.js?h=d922cbc9"></script>
+	<script type="text/javascript" src="/static/js/modernizr.custom.flexbox.js?h=6ad12adf"></script>
+	<script src="/static/js/jwplayer.js?h=3a614ae0"></script>
+	<script type="text/javascript">jwplayer.key="nqQ0Pov7WvHRdo5EKjepx2jEg3EL+f9Md6LRGw==";</script>
+
+	<script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+
+
+	<link rel="shortcut icon" type="image/x-icon" href="/static/img/favicon.ico?h=b1c5cc03">
+
+
+	<script>
+		(function(){
+			var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/t/5.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+		})("woopra");
+
+		woopra.config({
+			domain: 'livecoding.tv'
+		});
+		woopra.track();
+	</script>
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-57626352-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+</head>
+
+<body class="stream-page theater-key-down ">
+
+<section class="wrapper">
+
+
+	<aside class="main-navigation regular-navigation hidden-xs" id="topSidebar">
+
+		<nav class="top-left-nav">
+			<ul>
+				<li class="logo"><a href="/" class="logo-link"></a></li>
+				<li><a href="/livestreams/">Livestreams</a></li>
+				<li><a href="/videos/">Videos</a></li>
+				<li><a href="/schedule/">Schedule</a></li>
+			</ul>
+		</nav>
+
+
+
+
+
+
+
+		<nav class="top-right-nav">
+
+			<div class="top-right-nav--home">
+
+			</div>
+
+			<ul class="top-right-nav--default">
+
+				<li class="user-info closed">
+					<a href="/publysher/" class="user-name show-username" target="_blank">
+
+						<img src="/static/img/userdashboard-img.png?h=96c35f43" width="24" height="24" alt=""/>
+
+						publysher
+					</a>
+					<a href="/publysher/" class="user-name hide-username" target="_blank">
+
+						<img src="/static/img/userdashboard-img.png?h=96c35f43" width="24" height="24" alt=""/>
+
+					</a>
+					<a href="#"><i class="fa fa-angle-down user-opener"></i></a>
+					<ul class="user-sub-menu">
+						<li><a href="/publysher/videos/"><div class="hack">My videos</div></a></li>
+						<li><a href="/publysher/settings/transactions/" target="_blank"><div class="hack">Transactions</div></a></li>
+						<li>
+							<a href="/publysher/settings/channel/" target="_blank"><div class="hack">Channel settings</div></a>
+						</li>
+						<li>
+							<a href="/publysher/settings/followers/" target="_blank"><div class="hack">Followers</div></a>
+						</li>
+					</ul>
+				</li>
+				<li class="search-box-collapse">
+					<button class="icon-search js-show-search" data-toggle="tooltip" data-placement="bottom" title="Search"></button>
+				</li>
+				<li class="reminder"><a href="/publysher/settings/notifications/" class="icon-bell" data-toggle="tooltip" data-placement="bottom" title="Notifications" target="_blank"></a></li>
+				<li class="messages">
+					<a href="/publysher/settings/messages/" class="letter main-navigationHover" data-toggle="tooltip" data-placement="bottom" title="Messages" target="_blank">
+						<i class="fa fa-envelope-o"></i>
+					</a>
+				</li>
+
+				<li class="sub-menu closed">
+					<a href="#" class="sub-menu-opener"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></a>
+					<ul class="main-sub-menu">
+						<li><a rel="me" href="http://blog.livecoding.tv/" target="_blank">Blog</a></li>
+						<li><a rel="me" href="http://roadmap.livecoding.tv/" target="_blank">Roadmap</a></li>
+						<li><a href="/pastebin/">Pastebin</a></li>
+						<li><a href="/answerbase/">Visual answerbase</a></li>
+						<li><a href="/leaderboard/streamers/">Leaderboard</a></li>
+						<li><a href="/news/">Weekly news</a></li>
+						<li><a href="/press/">Press</a></li>
+						<li><a href="/goodies/">Goodies</a></li>
+						<li><a href="/builtonlivecodingtv/">Built on Livecoding.tv</a></li>
+						<li class="devider"></li>
+						<li><a href="/streamerprogram/">Streamer program</a></li>
+						<li><a href="/streamingguide/">Streamer guide</a></li>
+						<li><a href="http://support.livecoding.tv/hc/en-us/" target="_blank">Support</a></li>
+						<li><a href="/contact/">Contact</a></li>
+						<li><a href="/about/">About us</a></li>
+
+						<li><a href="/accounts/logout/">Logout</a></li>
+
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</aside>
+
+	<!-- Header mobile navigation -->
+	<aside class="main-navigation mobile-navigation visible-xs auth" id="mobSidebar">
+
+
+		<!-- Header navigation toogle on mobile -->
+		<div class="navbar-toggle-user visible-xs">
+		</div><!-- End Header navigation toogle on mobile -->
+
+
+		<!-- Header navigation logo on mobile -->
+		<nav class="top-left-nav">
+			<ul>
+				<li class="logo"><a href="/" class="logo-link"></a></li>
+			</ul>
+		</nav><!-- End Header navigation logo on mobile -->
+
+		<!-- Header navigation toogle on mobile -->
+		<div class="navbar-toggle visible-xs">
+			<span class="icon-bar top"></span>
+			<span class="icon-bar middle"></span>
+			<span class="icon-bar bottom"></span>
+		</div><!-- End Header navigation toogle on mobile -->
+
+	</aside>
+	<!-- End Header mobile navigation -->
+
+
+	<!-- Mobile menu -->
+	<section class="mobile-menu-user visible-xs">
+		<ul>
+			<li><a href="/publysher/" class="user-name" target="_blank">My channel</a></li>
+			<li><a href="/publysher/videos/">My videos</a></li>
+			<li><a href="/publysher/settings/notifications/" target="_blank">Notifications</a></li>
+			<li><a href="/publysher/settings/messages/" target="_blank">Messages</a></li>
+			<li><a href="/publysher/settings/transactions/" target="_blank">Transactions</a></li>
+			<li><a href="/publysher/settings/channel/" target="_blank">Channel settings</a></li>
+			<li><a href="/publysher/settings/followers/" target="_blank">Followers</a></li>
+			<li><a href="/accounts/social/connections/">Connections</a></li>
+		</ul>
+	</section><!-- End Mobile menu -->
+
+
+	<!-- Mobile menu -->
+	<section class="mobile-menu visible-xs">
+		<ul>
+			<li><a href="/livestreams/">Livestreams</a></li>
+			<li><a href="/schedule/">Schedule</a></li>
+			<li><a rel="me" href="http://blog.livecoding.tv/" target="_blank">Blog</a></li>
+			<li><a rel="me" href="http://roadmap.livecoding.tv/" target="_blank">Roadmap</a></li>
+			<li><a href="/pastebin/">Pastebin</a></li>
+			<li><a href="/answerbase/">Visual answerbase</a></li>
+			<li><a href="/leaderboard/streamers/">Leaderboard</a></li>
+			<li><a href="/news/">Weekly news</a></li>
+			<li><a href="/press/">Press</a></li>
+			<li><a href="/goodies/">Goodies</a></li>
+			<li><a href="/builtonlivecodingtv/">Built on Livecoding.tv</a></li>
+			<li class="devider"></li>
+			<li><a href="/streamerprogram/">Streamer program</a></li>
+			<li><a href="/streamingguide/">Streamer guide</a></li>
+			<li><a href="http://support.livecoding.tv/hc/en-us/" target="_blank">Support</a></li>
+			<li><a href="/contact/">Contact</a></li>
+			<li><a href="/about/">About us</a></li>
+
+			<li><a href="/accounts/logout/">Logout</a></li>
+
+			<!-- <li><a href="/contact/">Contact</a></li> -->
+			<!-- <li><a href="/about/">About us</a></li> -->
+		</ul>
+	</section><!-- End Mobile menu -->
+
+
+
+	<section id="tip-card" class="modal showtour-tip basic-modal-form" data-backdrop="static" aria-hidden="true">
+		<div class="modal-dialog tip-card-box">
+
+			<div class="modal-content tip-card-item animated" id="first-card">
+				<div class="modal-header">
+					<h4 class="modal-title">Your channel</h4>
+				</div>
+				<div class="modal-body">
+					<p>Clicking on your name will take you to your channel, where you can get set up for your own livestream.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
+					<button type="button" class="btn btn-default tip-close">Close</button>
+				</div>
+			</div><!-- /.modal-content -->
+
+			<div class="modal-content tip-card-item hidden animated" id="second-card">
+				<div class="modal-header">
+					<h4 class="modal-title">Schedule</h4>
+				</div>
+				<div class="modal-body">
+					<p>Here you can find our schedule which will show you upcoming streams in a category you are interested in.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
+					<button type="button" class="btn btn-default tip-close">Close</button>
+				</div>
+			</div><!-- /.modal-content -->
+
+			<div class="modal-content tip-card-item hidden animated" id="third-card">
+				<div class="modal-header">
+					<h4 class="modal-title">Edit your channel</h4>
+				</div>
+				<div class="modal-body">
+					<p>This allows you to edit your channel and add details about what you are streaming.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
+					<button type="button" class="btn btn-default tip-close">Close</button>
+				</div>
+			</div><!-- /.modal-content -->
+
+			<div class="modal-content tip-card-item hidden animated" id="fourth-card">
+				<div class="modal-header">
+					<h4 class="modal-title">Chat</h4>
+				</div>
+				<div class="modal-body">
+					<p>Up here you can pop out the chat, moderate any spammers and change your username colour in the chat.</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
+					<button type="button" class="btn btn-default tip-close">Close</button>
+				</div>
+			</div><!-- /.modal-content -->
+
+		</div><!-- /.modal-dialog -->
+	</section><!-- /.modal -->
+
+
+
+
+	<!-- Content -->
+	<section class="content subscribed">
+
+
+
+
+
+
+		<div id="donation_popup" class="modal danate-popup" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body danate-popup-box">
+
+						<img src="/static/img/sign-in-alert.png?h=8497a647" alt="">
+						<p>You can't donate to yourself.</p>
+						<button data-dismiss="modal">OK</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			"use strict";
+			jQuery(document).ready(function (){
+				var $donationPopup = $("#donation_popup");
+
+				$donationPopup.on("shown.bs.modal", function () {
+					var inputAmount = $("#id_donation").val("10.00").stepper({
+						min: 5, max: 1000, step: 5
+					});
+
+					var isGoodAmount = function () {
+						var amount = inputAmount.val();
+						return amount >= 15 || amount == 5 || amount == 10;
+					};
+					var checkAmount = function (e) {
+						var isBadAmount = !isGoodAmount();
+						$donationPopup.find("form button[type='submit']").prop("disabled", isBadAmount).toggle(!isBadAmount);
+						$donationPopup.find(".bad-amount").toggle(isBadAmount);
+					};
+
+					inputAmount.change(checkAmount);
+					checkAmount(null);
+
+					$donationPopup.find("form").on("submit", function(e) {
+						if (!isGoodAmount()) {
+							e.preventDefault();
+							inputAmount.focus();
+							$donationPopup.find("form button[type='submit']").prop("disabled", true).hide();
+							$donationPopup.find(".bad-amount").show();
+							return false;
+						}
+					});
+				});
+			});
+		</script>
+
+
+		<!-- Stream main container -->
+		<div class="stream-main">
+
+			<!-- Stream header -->
+			<header class="stream-header">
+				<div class="span-8">
+					<div class="stream-title clearfix">
+						<div class="stream-title--image">
+
+							<img src="/static/img/userdashboard-img.png?h=96c35f43" >
+
+						</div>
+						<div class="stream-title--title">
+							<h2 class="live-title " data-toggle="tooltip" data-placement="bottom" title="Python: retrieving metadata from websites">Python: retrieving metadata from websites</h2>
+						</div>
+						<div class="stream-title--username">
+							<p>with <span>publysher</span></p>
+						</div>
+					</div>
+
+					<div class="stream-next">
+
+
+
+					</div>
+
+					<div class="stream-current-time">
+
+						<p class="stream-current-time--data">Total Stream Time | <span>6 hours</span></p>
+
+
+					</div>
+
+					<div class="stream-buttons js-showtour ">
+
+						<div class="edit-stream-popover"></div>
+						<a class="stream-buttons--edit" href="/publysher/edit/">Edit</a>
+
+
+					</div>
+				</div>
+
+				<div class="span-4">
+					<div class="stream-cat-difficulty">
+
+						<div class="stream-category">
+							<span class="badge python">Python</span>
+						</div>
+						<div class="stream-difficulty">
+							<span class="badge">beginner</span>
+						</div>
+
+					</div>
+				</div>
+			</header><!-- End Stream header -->
+
+			<!-- Video and chat -->
+			<div class="stream-video-chat">
+				<div class="span-8">
+					<div class="stream-video theater-mode-container">
+						<button class="exit-theater-mode">Exit Theater Mode</button>
+						<button class="hide-theater-chat">Hide Chat</button>
+
+						<div class="jw-livestream jwplayer-livestream-main-container">
+							<button class="go-theater-mode">Theater</button>
+
+							<div class="dropdown dropup pull-left social-share-drop-box">
+								<button id="streamVideoShare" class="social-share-drop" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-share-alt"></i></button>
+
+								<ul class="dropdown-menu" role="menu" aria-labelledby="streamVideoShare">
+									<div class="fb-box" style="height: 20px; overflow: hidden;">
+										<div class="fb-like" data-href="https://livecoding.tv/publysher/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+									</div>
+
+									<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+									<li>
+										<p>Channel link:</p>
+										<input type="text" readonly="readonly" value="https://www.livecoding.tv/publysher/" onclick="this.select();">
+									</li>
+								</ul>
+							</div>
+
+							<div class="stream-status" id="video-streaming-status-label">
+								<span class="status-live status-hide">Live<i class="fa fa-circle"></i></span>
+								<span class="status-offline status-hide">Offline<i class="fa fa-times"></i></span>
+							</div>
+
+							<div id="jwplayer-livestream-main"></div>
+
+
+							<img class="noflash-img" src="/static/img/noflash.jpg?h=a35d6384" />
+							<img class="offline-img " src="/static/img/offline.png?h=5fee647e" />
+
+						</div>
+					</div>
+
+					<div id="follow-popup" class="modal" aria-hidden="true">
+						<div class="follow-popup-box mobile-popup-box">
+							<img src="/static/img/follow-suc.png?h=e9adbf2d" alt="" data-src-success="/static/img/follow-suc.png?h=e9adbf2d" data-src-failure="/static/img/sign-in-alert.png?h=8497a647" />
+							<p class="follow-popup-title"></p>
+							<p class="following-ok">You will get an email notification when they go live. You can change your notification settings in your dashboard.</p>
+							<button data-dismiss="modal">OK</button>
+						</div>
+					</div>
+
+					<div class="stream-video-info clearfix">
+						<div class="stream-video-info--buttons clearfix">
+
+						</div>
+
+						<div class="stream-video-info--counts">
+
+							<span data-toggle="tooltip" data-placement="bottom" title="Followers"><i class="fa fa-heart" style="color: #a6a8ab; font-size: 18px;"></i> <span id="followers_count">10</span></span>
+							<span data-toggle="tooltip" data-placement="bottom" title="View count"><span class="icon-span-contact"></span> <span id="views_overall">104</span></span>
+							<span data-toggle="tooltip" data-placement="bottom" title="Live viewers"><span class="icon-red-eay"></span> <span id="views_live">6</span></span>
+						</div>
+					</div>
+				</div>
+
+				<div class="span-4">
+					<div class="stream-chat theater-mode-chat-container">
+
+						<div class="candy_container">
+							<div id="candy"><p>Initializing chat... (Please wait)</p></div>
+						</div>
+
+					</div>
+				</div>
+
+			</div><!-- End Video and chat -->
+
+		</div><!-- End Stream main container -->
+
+		<!-- Channel description -->
+		<div class="stream-desc">
+			<div class="span-8">
+				<div class="stream-desc-head">
+
+
+					<div class="stream-desc-head--markdown"><p>A series of livecasts on the development of Mirigata, a simple site for sharing interesting links.</p>
+
+						<p>The goal of this series is to show how you can quickly create a proof of concept using Python and Django, and get it live as soon as possible. </p>
+
+						<p>Although the main focus is P...</p>
+					</div>
+					<button type="button" class="activate-profile-tab">show full profile</button>
+
+					<ul class="nav nav-tabs" id="streamingTabNavList" role="tablist">
+						<li role="presentation" class="active"><a href="#userProfileInfo" aria-controls="userProfileInfo" role="tab" data-toggle="tab">Profile</a></li>
+						<li role="presentation"><a href="#userPlaylists" aria-controls="userPlaylists" role="tab" data-toggle="tab">Playlists</a></li>
+					</ul>
+				</div>
+
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="userProfileInfo">
+						<div class="stream-desc-social clearfix">
+							<div class="span-6 follow-div">
+
+								<div class="share-btn-box">
+									<span>publysher</span>
+
+
+								</div>
+
+							</div>
+
+							<div class="span-6 code-input">
+
+								<div class="access-source-code clearfix">
+
+									<a href="https://github.com/mirigata" target="_blank" class="stream-repo-link">https://github.com/mirigata</a>
+
+								</div>
+
+							</div>
+						</div>
+
+						<div class="stream-desc-info clearfix">
+							<div class="span-6 left">
+								<ul class="stream-desc-info--list">
+									<li>
+										<label>Favorite language:</label>
+										<span class="item-data">Python</span>
+									</li>
+									<li>
+										<label>Top 3 languages:</label>
+										<span class="item-data"></span>
+
+										<span class="item-data">Java</span>
+
+										<span class="item-data">Python</span>
+
+										<span class="item-data">Others</span>
+
+									</li>
+									<li>
+										<label>Years programming experience:</label>
+										<span class="item-data">&lt; 20 years</span>
+									</li>
+									<li>
+										<label>Favorite line of code:</label>
+										<span class="item-data">import antigravity</span>
+									</li>
+									<li>
+										<label>Favorite IDE:</label>
+										<span class="item-data">IntelliJ</span>
+									</li>
+
+									<li>
+										<label>City:</label>
+										<span class="item-data">Amsterdam</span>
+									</li>
+									<li>
+										<label>Country:</label>
+										<span class="item-data">Netherlands</span>
+									</li>
+
+
+									<li>
+										<label>Business website URL:</label>
+
+										<span class="item-data">(Not specified)</span>
+
+									</li>
+
+									<li>
+										<label>Languages I want to learn:</label>
+
+										<span class="item-data">Others</span>
+
+									</li>
+								</ul>
+							</div>
+
+							<div class="span-6 right">
+								<div class="stream-desc-info--tags">
+                  <span class="tag">
+
+                      <a href="/videos/tagged/django">django</a>
+
+                      <a href="/videos/tagged/docker">docker</a>
+
+                      <a href="/videos/tagged/opensource">opensource</a>
+
+                      <a href="/videos/tagged/python">python</a>
+
+                      <a href="/videos/tagged/webapp">webapp</a>
+
+                  </span>
+								</div>
+								<div class="stream-desc-info--desc">
+									<p>A series of livecasts on the development of Mirigata, a simple site for sharing interesting links.</p>
+
+									<p>The goal of this series is to show how you can quickly create a proof of concept using Python and Django, and get it live as soon as possible. </p>
+
+									<p>Although the main focus is Python/Django, I will also pay some attention to other tools and techniques, such as:</p>
+
+									<ul>
+										<li>HTML/CSS</li>
+										<li>Javascript</li>
+										<li>Git</li>
+										<li>MySQL</li>
+										<li>Docker</li>
+										<li>etc. etc. etc. </li>
+									</ul>
+
+									<p><strong>Feel free to use the chat to ask me questions</strong></p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div role="tabpanel" class="tab-pane" id="userPlaylists">
+						<div class="user-playlist-tab">
+
+							<p class="text-muted">This user has not created any playlists yet.</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="span-4">
+				<div class="stream-broadcasts">
+
+					<h6 class="stream-broadcasts--title">past broadcasts</h6>
+
+					<div class="stream-broadcasts-item">
+
+
+						<div class="stream-broadcasts-item--item">
+
+							<a class="stream-broadcasts-item--thumbnail" href="/video/djangopython-adding-users/">
+								<div class="playBtnbg"></div>
+								<span class="playBtn"></span>
+
+								<img class="thumbnail" src="/video/video/djangopython-adding-users/thumbnail_250_140/" alt="Django/Python: adding users" />
+
+							</a>
+
+                  <span class="stream-broadcasts-item--title">
+                    <a href="/video/djangopython-adding-users/">DJANGO/PYTHON: ADDING USERS</a>
+                  </span>
+
+                  <span class="stream-broadcasts-item--info">
+                    AMSTERDAM
+                    ,
+                    NETHERLANDS
+                  </span>
+
+							<span class="stream-broadcasts-item--count"><i class="fa fa-user"></i> 14</span>
+						</div>
+
+						<div class="stream-broadcasts-item--item">
+
+							<a class="stream-broadcasts-item--thumbnail" href="/video/making-a-django-app-production-ready-2/">
+								<div class="playBtnbg"></div>
+								<span class="playBtn"></span>
+
+								<img class="thumbnail" src="/video/video/making-a-django-app-production-ready-2/thumbnail_250_140/" alt="Making a Django app production-ready" />
+
+							</a>
+
+                  <span class="stream-broadcasts-item--title">
+                    <a href="/video/making-a-django-app-production-ready-2/">MAKING A DJANGO APP PRODUCTION-R...</a>
+                  </span>
+
+                  <span class="stream-broadcasts-item--info">
+                    AMSTERDAM
+                    ,
+                    NETHERLANDS
+                  </span>
+
+							<span class="stream-broadcasts-item--count"><i class="fa fa-user"></i> 15</span>
+						</div>
+
+						<div class="stream-broadcasts-item--item">
+
+							<a class="stream-broadcasts-item--thumbnail" href="/video/making-a-django-app-production-ready/">
+								<div class="playBtnbg"></div>
+								<span class="playBtn"></span>
+
+								<img class="thumbnail" src="/video/video/making-a-django-app-production-ready/thumbnail_250_140/" alt="Making a Django app production-ready" />
+
+							</a>
+
+                  <span class="stream-broadcasts-item--title">
+                    <a href="/video/making-a-django-app-production-ready/">MAKING A DJANGO APP PRODUCTION-R...</a>
+                  </span>
+
+                  <span class="stream-broadcasts-item--info">
+                    AMSTERDAM
+                    ,
+                    NETHERLANDS
+                  </span>
+
+							<span class="stream-broadcasts-item--count"><i class="fa fa-user"></i> 4</span>
+						</div>
+
+
+
+						<p class="stream-broadcasts--seemore"><a href="/publysher/videos/">See more videos from publysher</a></p>
+
+					</div>
+
+				</div>
+			</div>
+
+		</div><!-- End Channel description -->
+
+	</section><!-- End Content -->
+
+
+</section>
+
+
+
+
+<footer class="site-footer">
+	<div class="site-footer--location">
+		<i class="fa fa-map-marker"></i>
+		<span>Mountain View, California</span>
+	</div>
+	<div class="site-footer--copyright">
+		<span>copyright 2015</span>
+	</div>
+
+	<form class="site-footer--language" action="/i18n/setlang/" method="POST">
+		<input type='hidden' name='csrfmiddlewaretoken' value='iqHcIOdZJnAT6xqGBLdFg6Etfnyufp01' />
+
+
+
+		<button type="submit" name="language" value="pt-br" class="icon">
+			<img src="/static/img/icons/locale/flag-pt-br.png?h=f6e7ded5" alt="Português Brasileiro (Brazilian Portuguese)" />
+		</button>
+
+		<button type="submit" name="language" value="en-us" class="icon">
+			<img src="/static/img/icons/locale/flag-en-us.png?h=0770da36" alt="English (US) (English (US))" />
+		</button>
+
+	</form>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/static/js/csrf.js?h=de4aea70"></script>
+<script type="text/javascript" src="/static/js/vendor/visibility-1.2.1.min.js?h=99148e2d"></script>
+<script type="text/javascript" src="/static/js/vendor/mustache.min.js?h=42073c72"></script>
+<script type="text/javascript" src="/static/js/vendor/engine.io.js?h=43009142"></script>
+<script id="notification_template" type="x-tmpl-mustache">
+    <div class="notification-live">
+      <div class="notification-live-content">
+        <div class="notification-live-icon">
+          {{#icon}}<img class="icon" src="{{icon}}" alt="" />{{/icon}}
+        </div>
+        <div class="notification-live-text">
+          {{#title}}<p class="title">{{ title }}</p>{{/title}}
+          <p class="message">{{message}}</p>
+        </div>
+      </div>
+      <div class="notification-live-controls">
+        <a class="close" href="#"><span>Close</span></a>
+      </div>
+    </div>
+  </script>
+<script type="text/javascript" src="/static/js/liveupdates.js?h=4bea557d"></script>
+
+
+
+<script type="text/javascript" src="/static/js/bootstrap.min.js?h=ce84d611"></script>
+<script type="text/javascript" src="/static/js/jquery.jscrollpane.min.js?h=ae7bf896"></script>
+
+<script type="text/javascript" src="/static/js/signals.min.js?h=2b566066"></script>
+<script type="text/javascript" src="/static/js/crossroads.min.js?h=aa403007"></script>
+<script type="text/javascript" src="/static/js/hasher.min.js?h=853bfb50"></script>
+
+<script type="text/javascript" src="/static/js/jquery.fs.stepper.js?h=9b84aa94"></script>
+
+
+
+
+<script type="text/javascript" src="/static/js/dashboard.js?h=9aa2707e"></script>
+<script type="text/javascript" src="/static/js/share.min.js?h=0d8a0589"></script>
+<script type="text/javascript" src="/static/js/main.js?h=89c45396"></script>
+
+
+<!-- Begin Inspectlet Embed Code -->
+<script type="text/javascript" id="inspectletjs">
+	window.__insp = window.__insp || [];
+	__insp.push(['wid', 1217608576]);
+	(function() {
+		function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
+		if (window.attachEvent){
+			window.attachEvent('onload', __ldinsp);
+		}else{
+			window.addEventListener('load', __ldinsp, false);
+		}
+	})();
+</script>
+<!-- End Inspectlet Embed Code -->
+
+
+<script type="text/javascript" src="/static/js/vendor/bootstrap-datepicker.min.js?h=2e4741db"></script>
+<script type="text/javascript" src="/static/js/ajax-modal.js?h=d75f9556"></script>
+
+
+<script type="text/javascript">
+	$("a.subscribe-submit").click(function(){
+		$(".subscribe-form").submit();
+		return false;
+	});
+</script>
+
+
+
+
+
+<script type="text/javascript" src="/static/js/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="/static/js/vendor/jquery.cookie.js"></script>
+<script type="text/javascript" src="/static/js/csrf.js"></script>
+<script type="text/javascript" src="/static/candy-chat/highlight.min.js"></script>
+
+<script type="text/javascript" src="/static/candy-chat/libs.bundle.js"></script>
+<script type="text/javascript" src="/static/candy-chat/candy.bundle.js"></script>
+<script type="text/javascript" src="/static/candy-chat/candy.view.template.js"></script>
+<script type="text/javascript" src="/static/candy-chat/namecomplete/candy.js"></script>
+<script type="text/javascript" src="/static/candy-chat/colors-xhtml/candy.js"></script>
+<script type="text/javascript" src="/static/candy-chat/lctv_extras.js"></script>
+<script type="text/javascript" src="/static/candy-chat/chat.js"></script>
+
+
+<script type="text/javascript">
+	Candy.View.Template.Chat.pane = '<div id="chat-pane"><div class="chat-heading"><div class="candy-popup-opener"><a href="/chat/publysher/" target="livecodingtv.chat.publysher" title="Open in a new window"><span class="popout-icon"></span></a></div><div>Ask questions - join Q&amp;A</div></div>{{> tabs}}{{> toolbar}}{{> rooms}}</div>{{> modal}}';
+</script>
+
+
+
+<script type="text/javascript">
+	"use strict";
+
+	if (window.Chat) {
+		window.Chat.init({
+			debug: true,
+			disableWindowUnload: false,
+			assets: "/static/candy\u002Dchat/",
+			roomJid: "publysher@chat.livecoding.tv",
+			resource: "web\u002Dpublysher\u002D4ogTtTe8",
+			premium: true,
+			nickColor: "",
+			sessionSetupUrl: "/chat/publysher/xmpp-session.json",
+			colorChangeUrl: "/chat/set-nick-color.json",
+			useWebsockets: true,
+			chatUrlBosh: "/chat/http-bind",
+			chatUrlWs: "/chat/websocket",
+			pingInterval: 30000,
+		});
+		window.Chat.connect({"jid": "publysher@livecoding.tv", "password": "1wfs9igyHArtee7DBafRGl3SjnIfd175", "delayed": false});
+	} else {
+		// TODO: I18N: Translate error message when chat fails to load.
+		$("#candy").html("Sorry, essential chat JavaScript files failed to load.<br/>" +
+						"Try reloading the page. If this doesn't help, check your AD blocker.");
+	}
+</script>
+
+<script type="text/javascript">
+	"use strict";
+	jQuery(function($) {
+		var chatWindow = null;
+
+		$("#candy").on("click", ".candy-popup-opener a", function(e) {
+			e.preventDefault();
+
+			var windowName = "livecodingtv.chat.publysher",
+							windowFeatures = "resizable,width=320,height=480,dependent,dialog,minimizable," +
+											"scrollbars=no,menubar=no,toolbar=no,location=no,personalbar=no";
+
+			if (chatWindow == null || chatWindow.closed) {
+				chatWindow = window.open("/chat/publysher/", windowName, windowFeatures);
+				if (chatWindow === null) {
+					window.alert("Your browser may block the popup windows.");
+				}
+			} else {
+				chatWindow.focus();
+			}
+		});
+	});
+</script>
+
+
+
+<script type="text/javascript" src="/static/js/player.js?h=e635ab26"></script>
+<script>
+	"use strict";
+	jQuery(function ($) {
+		var streamURL = "rtmp://eumedia1.livecoding.tv:1935/livecodingtv/publysher?t=ED1E5B63C06942BC88C92948F438591C",
+						skinURL = "/static/jwplayerskins/livecoding.xml?h=5dc5c4a4";
+
+
+		var autostart = false;
+
+
+		var player = jwplayerInit("jwplayer-livestream-main", streamURL, skinURL, autostart);
+		window.player = player;
+		var check_low_buffer_counter = 0;
+
+		function check_low_buffer()
+		{
+			try
+			{
+				if ((isNaN(player.getMeta()['bufferfill']) || player.getMeta()['bufferfill'] < 0.1 ) && player.getState() == "PLAYING")
+				{
+					++check_low_buffer_counter;
+					if (check_low_buffer_counter >= 3)
+					{
+						player.stop();
+						player.play(true);
+						console.log("Reloading stream");
+						check_low_buffer_counter = 0;
+					}
+				}
+			}
+			catch(err){
+				console.log(err);
+			}
+		}
+		setInterval(check_low_buffer, 5000);
+
+		function check_null_state()
+		{
+			try
+			{
+				if (player.getState() == null)
+				{
+					player = jwplayerInit("jwplayer-livestream-main", streamURL, skinURL, autostart);
+					window.player = player;
+				}
+			}
+			catch(err){
+				console.log(err);
+			}
+		}
+		setInterval(check_null_state, 60000);
+
+		// Viewer poll
+		var pollPopup = $("#poll_popup");
+		var pollPK = window.streamPollPK;
+
+		if (pollPopup.length > 0 && $("#poll_send").length > 0) {
+			// Only show poll on timer if there's something to vote for
+			var pollTimeout = null,
+							showPoll = function () {
+								pollPopup.modal("show");
+							},
+							onPlay = function () {
+								if (pollTimeout !== null) { clearTimeout(pollTimeout); }
+
+								// Check if user seen the poll
+								$.get("/accounts/kv-storage", [{name: "k", value: "poll/publysher/seen"}],
+												function (data) {
+													if ( data["poll/publysher/seen"] !== pollPK ) {
+														pollTimeout = setTimeout(showPoll, 60000);
+														console.log("Poll: onPlay, started timer " + pollTimeout);
+													}
+												}
+								);
+							},
+							onStop = function () {
+								if (pollTimeout !== null) {
+									console.log("Poll: onStop, clearing timer " + pollTimeout);
+									clearTimeout(pollTimeout);
+								} else {
+									console.log("Poll: onStop, no active timer");
+								}
+								pollTimeout = null;
+							};
+			player.on("play", onPlay);
+			player.on("stop pause error", onStop);
+		}
+	});
+</script>
+
+<script type="text/javascript">
+	"use strict";
+	jQuery(function($) {
+		var updateViewStats = function () {
+			$.get("/livestreams/publysher/stats.json", function (data) {
+				if (data.item_class === "livestream") {
+					if (typeof data.views_live != "undefined") {
+						$("#views_live").text(data.views_live);
+					}
+					if (typeof data.views_overall != "undefined") {
+						$("#views_overall").text(data.views_overall);
+					}
+				}
+			});
+		};
+
+		if (typeof LivecodingTV !== "undefined" && LivecodingTV.live) {
+			LivecodingTV.live.join("stream.publysher");
+		} else {
+			console.log("LivecodingTV.live module not found, using old polling method to update stream stats");
+			setInterval(updateViewStats, 20000);
+		}
+
+		// Uncomment this to add this tooltip
+		// $(".site-content header h2").tooltip({
+		//     placement: "bottom",
+		//     title: function () { return $(this).data("stream-title"); }
+		// });
+
+		// Hide "live" label on click (useful if it obstructs the view)
+		$("#video-streaming-status-label .status-live").on("click", function(e) {
+			e.preventDefault();
+			$(this).addClass("status-hide");
+		});
+
+
+
+		// Hire popup
+		// TODO: Improve this asap!
+
+
+		// Edit or delete playlist
+
+		(function() {
+			var newTitle;
+
+			$('.js-user-playlist-edit').on('click', function() {
+				var $this = $(this).parents('.js-user-playlist-item'),
+								form = $this.find('.js-user-rename-playlist-form'),
+								action = form.find('input[name="action"]'),
+								currentTitle = $this.find('.js-user-playlist-title'),
+								editTitle = form.find('input[name="title"]');
+
+				action.val('edit');
+				editTitle.val(currentTitle.text());
+				currentTitle.hide();
+				form.show();
+				editTitle.focus();
+			});
+
+			$('.js-user-playlist-delete').on('click', function() {
+				var $this = $(this).parents('.js-user-playlist-item'),
+								form = $this.find('.js-user-rename-playlist-form'),
+								action = form.find('input[name="action"]');
+
+				action.val('delete');
+				form.submit();
+			});
+
+			$('.js-user-rename-playlist-form').on('submit', function(e) {
+				e.preventDefault();
+				var $this = $(this);
+				newTitle = $this.find('input[name="title"]').val();
+				submitForm($this);
+			});
+
+			function submitForm(thisForm) {
+				var $this = thisForm.parents('.js-user-playlist-item'),
+								form = thisForm,
+								formUrl = form.attr('action'),
+								action = form.find('input[name="action"]').val(),
+								currentTitle = $this.find('.js-user-playlist-title'),
+								editTitle = form.find('input[name="title"]');
+
+				$.ajax({
+					type     : 'POST',
+					url      : formUrl,
+					cache    : false,
+					data     : thisForm.serialize(),
+					dataType: 'json',
+					success  : function(response) {
+						if (response.success && action == "edit") {
+							currentTitle.text(response.title);
+							$this.find("a.user-playlist-item,a.js-user-playlist-title").attr("href", response.url);
+							form.hide();
+							currentTitle.show();
+							form.attr('action', response.manage_url);
+						} else if (response.success && action == "delete") {
+							thisForm.parents('.js-user-playlist-item').remove();
+						} else {
+							console.log('edit playlist error');
+						}
+					},
+					error  : function(response) {
+						console.log('edit playlist error');
+					}
+				});
+			}
+		})();
+
+
+	});
+</script>
+
+<script type="text/javascript">
+	$('.dropdown-menu').click(function(e) {
+		e.stopPropagation();
+	});
+	$('.activate-profile-tab').on('click', function(e){
+		$('#streamingTabNavList a[href="#userProfileInfo"]').tab('show');
+		$("html, body").animate({ scrollTop: $(".stream-desc-head").offset().top }, 0);
+	});
+</script>
+
+
+<script>
+	// Woopra Time tracking
+	var startTime = new Date().getTime();
+
+	setInterval(trackTime, 300000);
+	function trackTime(event) {
+		var endTime = new Date().getTime();
+		var timeSpent = Math.ceil((endTime - startTime) * 0.0000166666666666667);
+
+		woopra.identify({
+			email: "yigal@publysher.nl",
+			name: "publysher",
+		});
+		woopra.track("timeOnStream", {
+			time: timeSpent,
+		});
+	}
+</script>
+
+
+<script type="text/javascript">
+	jQuery(function($) {
+		if (location.hash == "#hire") {
+			if (typeof history != "undefined" && "pushState" in history) {
+				history.pushState("", document.title, location.pathname + location.search)
+			} else {
+				location.hash = "";
+			}
+			$("#hire-me-button").click();
+		}
+	});
+</script>
+
+<div id="fb-root"></div>
+<script>
+	window.fbAsyncInit = function() {
+		FB.init({
+			appId      : '1530810963824108',
+			xfbml      : true,
+			version    : 'v2.3'
+		});
+	};
+
+	(function(d, s, id){
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) {return;}
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script type="text/javascript" src="/static/js/jquery.cookiebar.js?h=927c382b"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.cookieBar();
+	});
+</script>
+
+
+
+
+
+
+<script type="text/javascript" src="/static/js/showtour.js?h=fd038acf"></script>
+
+
+<script type="text/javascript">
+	woopra.identify({
+		email: "yigal@publysher.nl",
+		name: "publysher"
+	});
+
+	woopra.track();
+</script>
+
+
+
+<div class="update-browser-layer js-show-update-browser">
+	<div class="update-browser-bg"></div>
+	<div class="update-browser-content">
+		<img src="/static/img/error.png?h=d41dc829" alt="Error image">
+		<p>Sorry but your browser is out of date - please install a new browser such as <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a></p>
+	</div>
+</div>
+</body>
+</html>
