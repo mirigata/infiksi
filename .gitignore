@@ -1,0 +1,8 @@
+.idea
+dist/
+infiksi.egg-info/
+infiksi.iml
+
+*pyc
+__pycache__
+
