@@ -1,5 +1,6 @@
 from unittest import TestCase
 from unittest.mock import patch
+
 import requests.exceptions
 
 import infiksi
@@ -14,7 +15,6 @@ class MockResponse(object):
 
 
 class RetrieveHtmlTest(TestCase):
-
     def test_medievalbooksnl_posters(self):
         expected = utils._load_fixture("medievalbooksnl_posters.html")
 

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,37 +18,36 @@
 	<meta property="og:type" content="streaming platform"/>
 
 
-
-
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
 
 	<link type="text/css" rel="stylesheet" href="/static/css/stream.css?h=628f5ffd">
 
 
-	<link rel="stylesheet" href="/static/candy-chat/jquery.jscrollpane.css" />
+	<link rel="stylesheet" href="/static/candy-chat/jquery.jscrollpane.css"/>
 	<link rel="stylesheet" href="/static/candy-chat/highlight.min.css">
 
-	<link rel="stylesheet" href="/static/candy-chat/default.css" />
-	<link rel="stylesheet" type="text/css" href="/static/candy-chat/namecomplete/candy.css" />
-	<link rel="stylesheet" type="text/css" href="/static/candy-chat/colors-xhtml/candy.css" />
-	<link rel="stylesheet" href="/static/candy-chat/overrides.css" />
+	<link rel="stylesheet" href="/static/candy-chat/default.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/candy-chat/namecomplete/candy.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/candy-chat/colors-xhtml/candy.css"/>
+	<link rel="stylesheet" href="/static/candy-chat/overrides.css"/>
 
 	<style type="text/css">
-		#candy .candy-popup-opener { float: right; border: 0px none; }
-		#candy .candy-popup-opener a { color: #ccc; font-size: 9px; }
+		#candy .candy-popup-opener {
+			float: right;
+			border: 0px none;
+		}
+
+		#candy .candy-popup-opener a {
+			color: #ccc;
+			font-size: 9px;
+		}
 	</style>
-
-
-
-
-
-
 
 
 	<script type="text/javascript" src="/static/js/jquery-latest.min.js?h=d922cbc9"></script>
 	<script type="text/javascript" src="/static/js/modernizr.custom.flexbox.js?h=6ad12adf"></script>
 	<script src="/static/js/jwplayer.js?h=3a614ae0"></script>
-	<script type="text/javascript">jwplayer.key="nqQ0Pov7WvHRdo5EKjepx2jEg3EL+f9Md6LRGw==";</script>
+	<script type="text/javascript">jwplayer.key = "nqQ0Pov7WvHRdo5EKjepx2jEg3EL+f9Md6LRGw==";</script>
 
 	<script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
 
@@ -63,8 +56,17 @@
 
 
 	<script>
-		(function(){
-			var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call","trackForm","trackClick"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/t/5.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+		(function() {
+			var t, i, e, n = window, o = document, a = arguments, s = "script", r = ["config", "track", "identify", "visit", "push", "call", "trackForm", "trackClick"], c = function() {
+				var t, i = this;
+				for (i._e = [], t = 0; r.length > t; t++)(function(t) {
+					i[t] = function() {
+						return i._e.push([t].concat(Array.prototype.slice.call(arguments, 0))), i
+					}
+				})(r[t])
+			};
+			for (n._w = n._w || {}, t = 0; a.length > t; t++)n._w[a[t]] = n[a[t]] = n[a[t]] || new c;
+			i = o.createElement(s), i.async = 1, i.src = "//static.woopra.com/js/t/5.js", e = o.getElementsByTagName(s)[0], e.parentNode.insertBefore(i, e)
 		})("woopra");
 
 		woopra.config({
@@ -80,9 +82,12 @@
 		_gaq.push(['_trackPageview']);
 
 		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			var ga = document.createElement('script');
+			ga.type = 'text/javascript';
+			ga.async = true;
 			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(ga, s);
 		})();
 	</script>
 
@@ -103,11 +108,6 @@
 				<li><a href="/schedule/">Schedule</a></li>
 			</ul>
 		</nav>
-
-
-
-
-
 
 
 		<nav class="top-right-nav">
@@ -132,28 +132,40 @@
 					</a>
 					<a href="#"><i class="fa fa-angle-down user-opener"></i></a>
 					<ul class="user-sub-menu">
-						<li><a href="/publysher/videos/"><div class="hack">My videos</div></a></li>
-						<li><a href="/publysher/settings/transactions/" target="_blank"><div class="hack">Transactions</div></a></li>
+						<li><a href="/publysher/videos/">
+							<div class="hack">My videos</div>
+						</a></li>
+						<li><a href="/publysher/settings/transactions/" target="_blank">
+							<div class="hack">Transactions</div>
+						</a></li>
 						<li>
-							<a href="/publysher/settings/channel/" target="_blank"><div class="hack">Channel settings</div></a>
+							<a href="/publysher/settings/channel/" target="_blank">
+								<div class="hack">Channel settings</div>
+							</a>
 						</li>
 						<li>
-							<a href="/publysher/settings/followers/" target="_blank"><div class="hack">Followers</div></a>
+							<a href="/publysher/settings/followers/" target="_blank">
+								<div class="hack">Followers</div>
+							</a>
 						</li>
 					</ul>
 				</li>
 				<li class="search-box-collapse">
-					<button class="icon-search js-show-search" data-toggle="tooltip" data-placement="bottom" title="Search"></button>
+					<button class="icon-search js-show-search" data-toggle="tooltip" data-placement="bottom"
+					        title="Search"></button>
 				</li>
-				<li class="reminder"><a href="/publysher/settings/notifications/" class="icon-bell" data-toggle="tooltip" data-placement="bottom" title="Notifications" target="_blank"></a></li>
+				<li class="reminder"><a href="/publysher/settings/notifications/" class="icon-bell" data-toggle="tooltip"
+				                        data-placement="bottom" title="Notifications" target="_blank"></a></li>
 				<li class="messages">
-					<a href="/publysher/settings/messages/" class="letter main-navigationHover" data-toggle="tooltip" data-placement="bottom" title="Messages" target="_blank">
+					<a href="/publysher/settings/messages/" class="letter main-navigationHover" data-toggle="tooltip"
+					   data-placement="bottom" title="Messages" target="_blank">
 						<i class="fa fa-envelope-o"></i>
 					</a>
 				</li>
 
 				<li class="sub-menu closed">
-					<a href="#" class="sub-menu-opener"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i class="fa fa-circle"></i></a>
+					<a href="#" class="sub-menu-opener"><i class="fa fa-circle"></i><i class="fa fa-circle"></i><i
+									class="fa fa-circle"></i></a>
 					<ul class="main-sub-menu">
 						<li><a rel="me" href="http://blog.livecoding.tv/" target="_blank">Blog</a></li>
 						<li><a rel="me" href="http://roadmap.livecoding.tv/" target="_blank">Roadmap</a></li>
@@ -185,7 +197,8 @@
 
 		<!-- Header navigation toogle on mobile -->
 		<div class="navbar-toggle-user visible-xs">
-		</div><!-- End Header navigation toogle on mobile -->
+		</div>
+		<!-- End Header navigation toogle on mobile -->
 
 
 		<!-- Header navigation logo on mobile -->
@@ -193,14 +206,16 @@
 			<ul>
 				<li class="logo"><a href="/" class="logo-link"></a></li>
 			</ul>
-		</nav><!-- End Header navigation logo on mobile -->
+		</nav>
+		<!-- End Header navigation logo on mobile -->
 
 		<!-- Header navigation toogle on mobile -->
 		<div class="navbar-toggle visible-xs">
 			<span class="icon-bar top"></span>
 			<span class="icon-bar middle"></span>
 			<span class="icon-bar bottom"></span>
-		</div><!-- End Header navigation toogle on mobile -->
+		</div>
+		<!-- End Header navigation toogle on mobile -->
 
 	</aside>
 	<!-- End Header mobile navigation -->
@@ -218,7 +233,8 @@
 			<li><a href="/publysher/settings/followers/" target="_blank">Followers</a></li>
 			<li><a href="/accounts/social/connections/">Connections</a></li>
 		</ul>
-	</section><!-- End Mobile menu -->
+	</section>
+	<!-- End Mobile menu -->
 
 
 	<!-- Mobile menu -->
@@ -247,8 +263,8 @@
 			<!-- <li><a href="/contact/">Contact</a></li> -->
 			<!-- <li><a href="/about/">About us</a></li> -->
 		</ul>
-	</section><!-- End Mobile menu -->
-
+	</section>
+	<!-- End Mobile menu -->
 
 
 	<section id="tip-card" class="modal showtour-tip basic-modal-form" data-backdrop="static" aria-hidden="true">
@@ -265,20 +281,23 @@
 					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
 					<button type="button" class="btn btn-default tip-close">Close</button>
 				</div>
-			</div><!-- /.modal-content -->
+			</div>
+			<!-- /.modal-content -->
 
 			<div class="modal-content tip-card-item hidden animated" id="second-card">
 				<div class="modal-header">
 					<h4 class="modal-title">Schedule</h4>
 				</div>
 				<div class="modal-body">
-					<p>Here you can find our schedule which will show you upcoming streams in a category you are interested in.</p>
+					<p>Here you can find our schedule which will show you upcoming streams in a category you are interested
+						in.</p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
 					<button type="button" class="btn btn-default tip-close">Close</button>
 				</div>
-			</div><!-- /.modal-content -->
+			</div>
+			<!-- /.modal-content -->
 
 			<div class="modal-content tip-card-item hidden animated" id="third-card">
 				<div class="modal-header">
@@ -291,7 +310,8 @@
 					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
 					<button type="button" class="btn btn-default tip-close">Close</button>
 				</div>
-			</div><!-- /.modal-content -->
+			</div>
+			<!-- /.modal-content -->
 
 			<div class="modal-content tip-card-item hidden animated" id="fourth-card">
 				<div class="modal-header">
@@ -304,20 +324,17 @@
 					<button type="button" class="btn btn-default dismiss-tour pull-left">Dismiss tour</button>
 					<button type="button" class="btn btn-default tip-close">Close</button>
 				</div>
-			</div><!-- /.modal-content -->
+			</div>
+			<!-- /.modal-content -->
 
-		</div><!-- /.modal-dialog -->
-	</section><!-- /.modal -->
-
-
+		</div>
+		<!-- /.modal-dialog -->
+	</section>
+	<!-- /.modal -->
 
 
 	<!-- Content -->
 	<section class="content subscribed">
-
-
-
-
 
 
 		<div id="donation_popup" class="modal danate-popup" aria-hidden="true">
@@ -326,6 +343,7 @@
 					<div class="modal-body danate-popup-box">
 
 						<img src="/static/img/sign-in-alert.png?h=8497a647" alt="">
+
 						<p>You can't donate to yourself.</p>
 						<button data-dismiss="modal">OK</button>
 
@@ -335,19 +353,19 @@
 		</div>
 		<script>
 			"use strict";
-			jQuery(document).ready(function (){
+			jQuery(document).ready(function() {
 				var $donationPopup = $("#donation_popup");
 
-				$donationPopup.on("shown.bs.modal", function () {
+				$donationPopup.on("shown.bs.modal", function() {
 					var inputAmount = $("#id_donation").val("10.00").stepper({
 						min: 5, max: 1000, step: 5
 					});
 
-					var isGoodAmount = function () {
+					var isGoodAmount = function() {
 						var amount = inputAmount.val();
 						return amount >= 15 || amount == 5 || amount == 10;
 					};
-					var checkAmount = function (e) {
+					var checkAmount = function(e) {
 						var isBadAmount = !isGoodAmount();
 						$donationPopup.find("form button[type='submit']").prop("disabled", isBadAmount).toggle(!isBadAmount);
 						$donationPopup.find(".bad-amount").toggle(isBadAmount);
@@ -379,11 +397,12 @@
 					<div class="stream-title clearfix">
 						<div class="stream-title--image">
 
-							<img src="/static/img/userdashboard-img.png?h=96c35f43" >
+							<img src="/static/img/userdashboard-img.png?h=96c35f43">
 
 						</div>
 						<div class="stream-title--title">
-							<h2 class="live-title " data-toggle="tooltip" data-placement="bottom" title="Python: retrieving metadata from websites">Python: retrieving metadata from websites</h2>
+							<h2 class="live-title " data-toggle="tooltip" data-placement="bottom"
+							    title="Python: retrieving metadata from websites">Python: retrieving metadata from websites</h2>
 						</div>
 						<div class="stream-title--username">
 							<p>with <span>publysher</span></p>
@@ -391,7 +410,6 @@
 					</div>
 
 					<div class="stream-next">
-
 
 
 					</div>
@@ -424,7 +442,8 @@
 
 					</div>
 				</div>
-			</header><!-- End Stream header -->
+			</header>
+			<!-- End Stream header -->
 
 			<!-- Video and chat -->
 			<div class="stream-video-chat">
@@ -437,18 +456,29 @@
 							<button class="go-theater-mode">Theater</button>
 
 							<div class="dropdown dropup pull-left social-share-drop-box">
-								<button id="streamVideoShare" class="social-share-drop" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-share-alt"></i></button>
+								<button id="streamVideoShare" class="social-share-drop" type="button" data-toggle="dropdown"
+								        aria-haspopup="true" aria-expanded="false"><i class="fa fa-share-alt"></i></button>
 
 								<ul class="dropdown-menu" role="menu" aria-labelledby="streamVideoShare">
 									<div class="fb-box" style="height: 20px; overflow: hidden;">
-										<div class="fb-like" data-href="https://livecoding.tv/publysher/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+										<div class="fb-like" data-href="https://livecoding.tv/publysher/" data-layout="button_count"
+										     data-action="like" data-show-faces="true" data-share="false"></div>
 									</div>
 
 									<a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+									<script>!function(d, s, id) {
+										var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+										if (!d.getElementById(id)) {
+											js = d.createElement(s);
+											js.id = id;
+											js.src = p + '://platform.twitter.com/widgets.js';
+											fjs.parentNode.insertBefore(js, fjs);
+										}
+									}(document, 'script', 'twitter-wjs');</script>
 									<li>
 										<p>Channel link:</p>
-										<input type="text" readonly="readonly" value="https://www.livecoding.tv/publysher/" onclick="this.select();">
+										<input type="text" readonly="readonly" value="https://www.livecoding.tv/publysher/"
+										       onclick="this.select();">
 									</li>
 								</ul>
 							</div>
@@ -461,17 +491,22 @@
 							<div id="jwplayer-livestream-main"></div>
 
 
-							<img class="noflash-img" src="/static/img/noflash.jpg?h=a35d6384" />
-							<img class="offline-img " src="/static/img/offline.png?h=5fee647e" />
+							<img class="noflash-img" src="/static/img/noflash.jpg?h=a35d6384"/>
+							<img class="offline-img " src="/static/img/offline.png?h=5fee647e"/>
 
 						</div>
 					</div>
 
 					<div id="follow-popup" class="modal" aria-hidden="true">
 						<div class="follow-popup-box mobile-popup-box">
-							<img src="/static/img/follow-suc.png?h=e9adbf2d" alt="" data-src-success="/static/img/follow-suc.png?h=e9adbf2d" data-src-failure="/static/img/sign-in-alert.png?h=8497a647" />
+							<img src="/static/img/follow-suc.png?h=e9adbf2d" alt=""
+							     data-src-success="/static/img/follow-suc.png?h=e9adbf2d"
+							     data-src-failure="/static/img/sign-in-alert.png?h=8497a647"/>
+
 							<p class="follow-popup-title"></p>
-							<p class="following-ok">You will get an email notification when they go live. You can change your notification settings in your dashboard.</p>
+
+							<p class="following-ok">You will get an email notification when they go live. You can change your
+								notification settings in your dashboard.</p>
 							<button data-dismiss="modal">OK</button>
 						</div>
 					</div>
@@ -483,9 +518,13 @@
 
 						<div class="stream-video-info--counts">
 
-							<span data-toggle="tooltip" data-placement="bottom" title="Followers"><i class="fa fa-heart" style="color: #a6a8ab; font-size: 18px;"></i> <span id="followers_count">10</span></span>
-							<span data-toggle="tooltip" data-placement="bottom" title="View count"><span class="icon-span-contact"></span> <span id="views_overall">104</span></span>
-							<span data-toggle="tooltip" data-placement="bottom" title="Live viewers"><span class="icon-red-eay"></span> <span id="views_live">6</span></span>
+							<span data-toggle="tooltip" data-placement="bottom" title="Followers"><i class="fa fa-heart"
+							                                                                         style="color: #a6a8ab; font-size: 18px;"></i> <span
+											id="followers_count">10</span></span>
+							<span data-toggle="tooltip" data-placement="bottom" title="View count"><span
+											class="icon-span-contact"></span> <span id="views_overall">104</span></span>
+							<span data-toggle="tooltip" data-placement="bottom" title="Live viewers"><span
+											class="icon-red-eay"></span> <span id="views_live">6</span></span>
 						</div>
 					</div>
 				</div>
@@ -500,9 +539,11 @@
 					</div>
 				</div>
 
-			</div><!-- End Video and chat -->
+			</div>
+			<!-- End Video and chat -->
 
-		</div><!-- End Stream main container -->
+		</div>
+		<!-- End Stream main container -->
 
 		<!-- Channel description -->
 		<div class="stream-desc">
@@ -510,17 +551,21 @@
 				<div class="stream-desc-head">
 
 
-					<div class="stream-desc-head--markdown"><p>A series of livecasts on the development of Mirigata, a simple site for sharing interesting links.</p>
+					<div class="stream-desc-head--markdown"><p>A series of livecasts on the development of Mirigata, a simple site
+						for sharing interesting links.</p>
 
-						<p>The goal of this series is to show how you can quickly create a proof of concept using Python and Django, and get it live as soon as possible. </p>
+						<p>The goal of this series is to show how you can quickly create a proof of concept using Python and Django,
+							and get it live as soon as possible. </p>
 
 						<p>Although the main focus is P...</p>
 					</div>
 					<button type="button" class="activate-profile-tab">show full profile</button>
 
 					<ul class="nav nav-tabs" id="streamingTabNavList" role="tablist">
-						<li role="presentation" class="active"><a href="#userProfileInfo" aria-controls="userProfileInfo" role="tab" data-toggle="tab">Profile</a></li>
-						<li role="presentation"><a href="#userPlaylists" aria-controls="userPlaylists" role="tab" data-toggle="tab">Playlists</a></li>
+						<li role="presentation" class="active"><a href="#userProfileInfo" aria-controls="userProfileInfo" role="tab"
+						                                          data-toggle="tab">Profile</a></li>
+						<li role="presentation"><a href="#userPlaylists" aria-controls="userPlaylists" role="tab" data-toggle="tab">Playlists</a>
+						</li>
 					</ul>
 				</div>
 
@@ -622,11 +667,14 @@
                   </span>
 								</div>
 								<div class="stream-desc-info--desc">
-									<p>A series of livecasts on the development of Mirigata, a simple site for sharing interesting links.</p>
+									<p>A series of livecasts on the development of Mirigata, a simple site for sharing interesting
+										links.</p>
 
-									<p>The goal of this series is to show how you can quickly create a proof of concept using Python and Django, and get it live as soon as possible. </p>
+									<p>The goal of this series is to show how you can quickly create a proof of concept using Python and
+										Django, and get it live as soon as possible. </p>
 
-									<p>Although the main focus is Python/Django, I will also pay some attention to other tools and techniques, such as:</p>
+									<p>Although the main focus is Python/Django, I will also pay some attention to other tools and
+										techniques, such as:</p>
 
 									<ul>
 										<li>HTML/CSS</li>
@@ -634,7 +682,7 @@
 										<li>Git</li>
 										<li>MySQL</li>
 										<li>Docker</li>
-										<li>etc. etc. etc. </li>
+										<li>etc. etc. etc.</li>
 									</ul>
 
 									<p><strong>Feel free to use the chat to ask me questions</strong></p>
@@ -668,7 +716,8 @@
 								<div class="playBtnbg"></div>
 								<span class="playBtn"></span>
 
-								<img class="thumbnail" src="/video/video/djangopython-adding-users/thumbnail_250_140/" alt="Django/Python: adding users" />
+								<img class="thumbnail" src="/video/video/djangopython-adding-users/thumbnail_250_140/"
+								     alt="Django/Python: adding users"/>
 
 							</a>
 
@@ -691,7 +740,8 @@
 								<div class="playBtnbg"></div>
 								<span class="playBtn"></span>
 
-								<img class="thumbnail" src="/video/video/making-a-django-app-production-ready-2/thumbnail_250_140/" alt="Making a Django app production-ready" />
+								<img class="thumbnail" src="/video/video/making-a-django-app-production-ready-2/thumbnail_250_140/"
+								     alt="Making a Django app production-ready"/>
 
 							</a>
 
@@ -714,7 +764,8 @@
 								<div class="playBtnbg"></div>
 								<span class="playBtn"></span>
 
-								<img class="thumbnail" src="/video/video/making-a-django-app-production-ready/thumbnail_250_140/" alt="Making a Django app production-ready" />
+								<img class="thumbnail" src="/video/video/making-a-django-app-production-ready/thumbnail_250_140/"
+								     alt="Making a Django app production-ready"/>
 
 							</a>
 
@@ -732,7 +783,6 @@
 						</div>
 
 
-
 						<p class="stream-broadcasts--seemore"><a href="/publysher/videos/">See more videos from publysher</a></p>
 
 					</div>
@@ -740,14 +790,14 @@
 				</div>
 			</div>
 
-		</div><!-- End Channel description -->
+		</div>
+		<!-- End Channel description -->
 
-	</section><!-- End Content -->
+	</section>
+	<!-- End Content -->
 
 
 </section>
-
-
 
 
 <footer class="site-footer">
@@ -760,24 +810,19 @@
 	</div>
 
 	<form class="site-footer--language" action="/i18n/setlang/" method="POST">
-		<input type='hidden' name='csrfmiddlewaretoken' value='iqHcIOdZJnAT6xqGBLdFg6Etfnyufp01' />
-
+		<input type='hidden' name='csrfmiddlewaretoken' value='iqHcIOdZJnAT6xqGBLdFg6Etfnyufp01'/>
 
 
 		<button type="submit" name="language" value="pt-br" class="icon">
-			<img src="/static/img/icons/locale/flag-pt-br.png?h=f6e7ded5" alt="Português Brasileiro (Brazilian Portuguese)" />
+			<img src="/static/img/icons/locale/flag-pt-br.png?h=f6e7ded5" alt="Português Brasileiro (Brazilian Portuguese)"/>
 		</button>
 
 		<button type="submit" name="language" value="en-us" class="icon">
-			<img src="/static/img/icons/locale/flag-en-us.png?h=0770da36" alt="English (US) (English (US))" />
+			<img src="/static/img/icons/locale/flag-en-us.png?h=0770da36" alt="English (US) (English (US))"/>
 		</button>
 
 	</form>
 </footer>
-
-
-
-
 
 
 <script type="text/javascript" src="/static/js/csrf.js?h=de4aea70"></script>
@@ -799,9 +844,9 @@
         <a class="close" href="#"><span>Close</span></a>
       </div>
     </div>
-  </script>
-<script type="text/javascript" src="/static/js/liveupdates.js?h=4bea557d"></script>
 
+</script>
+<script type="text/javascript" src="/static/js/liveupdates.js?h=4bea557d"></script>
 
 
 <script type="text/javascript" src="/static/js/bootstrap.min.js?h=ce84d611"></script>
@@ -814,8 +859,6 @@
 <script type="text/javascript" src="/static/js/jquery.fs.stepper.js?h=9b84aa94"></script>
 
 
-
-
 <script type="text/javascript" src="/static/js/dashboard.js?h=9aa2707e"></script>
 <script type="text/javascript" src="/static/js/share.min.js?h=0d8a0589"></script>
 <script type="text/javascript" src="/static/js/main.js?h=89c45396"></script>
@@ -826,10 +869,19 @@
 	window.__insp = window.__insp || [];
 	__insp.push(['wid', 1217608576]);
 	(function() {
-		function __ldinsp(){var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); }
-		if (window.attachEvent){
+		function __ldinsp() {
+			var insp = document.createElement('script');
+			insp.type = 'text/javascript';
+			insp.async = true;
+			insp.id = "inspsync";
+			insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js';
+			var x = document.getElementsByTagName('script')[0];
+			x.parentNode.insertBefore(insp, x);
+		}
+
+		if (window.attachEvent) {
 			window.attachEvent('onload', __ldinsp);
-		}else{
+		} else {
 			window.addEventListener('load', __ldinsp, false);
 		}
 	})();
@@ -842,14 +894,11 @@
 
 
 <script type="text/javascript">
-	$("a.subscribe-submit").click(function(){
+	$("a.subscribe-submit").click(function() {
 		$(".subscribe-form").submit();
 		return false;
 	});
 </script>
-
-
-
 
 
 <script type="text/javascript" src="/static/js/jquery.mousewheel.min.js"></script>
@@ -871,7 +920,6 @@
 </script>
 
 
-
 <script type="text/javascript">
 	"use strict";
 
@@ -891,7 +939,11 @@
 			chatUrlWs: "/chat/websocket",
 			pingInterval: 30000,
 		});
-		window.Chat.connect({"jid": "publysher@livecoding.tv", "password": "1wfs9igyHArtee7DBafRGl3SjnIfd175", "delayed": false});
+		window.Chat.connect({
+			"jid": "publysher@livecoding.tv",
+			"password": "1wfs9igyHArtee7DBafRGl3SjnIfd175",
+			"delayed": false
+		});
 	} else {
 		// TODO: I18N: Translate error message when chat fails to load.
 		$("#candy").html("Sorry, essential chat JavaScript files failed to load.<br/>" +
@@ -924,31 +976,24 @@
 </script>
 
 
-
 <script type="text/javascript" src="/static/js/player.js?h=e635ab26"></script>
 <script>
 	"use strict";
-	jQuery(function ($) {
+	jQuery(function($) {
 		var streamURL = "rtmp://eumedia1.livecoding.tv:1935/livecodingtv/publysher?t=ED1E5B63C06942BC88C92948F438591C",
 						skinURL = "/static/jwplayerskins/livecoding.xml?h=5dc5c4a4";
 
-
 		var autostart = false;
-
 
 		var player = jwplayerInit("jwplayer-livestream-main", streamURL, skinURL, autostart);
 		window.player = player;
 		var check_low_buffer_counter = 0;
 
-		function check_low_buffer()
-		{
-			try
-			{
-				if ((isNaN(player.getMeta()['bufferfill']) || player.getMeta()['bufferfill'] < 0.1 ) && player.getState() == "PLAYING")
-				{
+		function check_low_buffer() {
+			try {
+				if ((isNaN(player.getMeta()['bufferfill']) || player.getMeta()['bufferfill'] < 0.1 ) && player.getState() == "PLAYING") {
 					++check_low_buffer_counter;
-					if (check_low_buffer_counter >= 3)
-					{
+					if (check_low_buffer_counter >= 3) {
 						player.stop();
 						player.play(true);
 						console.log("Reloading stream");
@@ -956,26 +1001,25 @@
 					}
 				}
 			}
-			catch(err){
+			catch (err) {
 				console.log(err);
 			}
 		}
+
 		setInterval(check_low_buffer, 5000);
 
-		function check_null_state()
-		{
-			try
-			{
-				if (player.getState() == null)
-				{
+		function check_null_state() {
+			try {
+				if (player.getState() == null) {
 					player = jwplayerInit("jwplayer-livestream-main", streamURL, skinURL, autostart);
 					window.player = player;
 				}
 			}
-			catch(err){
+			catch (err) {
 				console.log(err);
 			}
 		}
+
 		setInterval(check_null_state, 60000);
 
 		// Viewer poll
@@ -985,23 +1029,23 @@
 		if (pollPopup.length > 0 && $("#poll_send").length > 0) {
 			// Only show poll on timer if there's something to vote for
 			var pollTimeout = null,
-							showPoll = function () {
+							showPoll = function() {
 								pollPopup.modal("show");
 							},
-							onPlay = function () {
+							onPlay = function() {
 								if (pollTimeout !== null) { clearTimeout(pollTimeout); }
 
 								// Check if user seen the poll
 								$.get("/accounts/kv-storage", [{name: "k", value: "poll/publysher/seen"}],
-												function (data) {
-													if ( data["poll/publysher/seen"] !== pollPK ) {
+												function(data) {
+													if (data["poll/publysher/seen"] !== pollPK) {
 														pollTimeout = setTimeout(showPoll, 60000);
 														console.log("Poll: onPlay, started timer " + pollTimeout);
 													}
 												}
 								);
 							},
-							onStop = function () {
+							onStop = function() {
 								if (pollTimeout !== null) {
 									console.log("Poll: onStop, clearing timer " + pollTimeout);
 									clearTimeout(pollTimeout);
@@ -1019,8 +1063,8 @@
 <script type="text/javascript">
 	"use strict";
 	jQuery(function($) {
-		var updateViewStats = function () {
-			$.get("/livestreams/publysher/stats.json", function (data) {
+		var updateViewStats = function() {
+			$.get("/livestreams/publysher/stats.json", function(data) {
 				if (data.item_class === "livestream") {
 					if (typeof data.views_live != "undefined") {
 						$("#views_live").text(data.views_live);
@@ -1051,11 +1095,8 @@
 			$(this).addClass("status-hide");
 		});
 
-
-
 		// Hire popup
 		// TODO: Improve this asap!
-
 
 		// Edit or delete playlist
 
@@ -1101,12 +1142,12 @@
 								editTitle = form.find('input[name="title"]');
 
 				$.ajax({
-					type     : 'POST',
-					url      : formUrl,
-					cache    : false,
-					data     : thisForm.serialize(),
+					type: 'POST',
+					url: formUrl,
+					cache: false,
+					data: thisForm.serialize(),
 					dataType: 'json',
-					success  : function(response) {
+					success: function(response) {
 						if (response.success && action == "edit") {
 							currentTitle.text(response.title);
 							$this.find("a.user-playlist-item,a.js-user-playlist-title").attr("href", response.url);
@@ -1119,13 +1160,12 @@
 							console.log('edit playlist error');
 						}
 					},
-					error  : function(response) {
+					error: function(response) {
 						console.log('edit playlist error');
 					}
 				});
 			}
 		})();
-
 
 	});
 </script>
@@ -1134,9 +1174,9 @@
 	$('.dropdown-menu').click(function(e) {
 		e.stopPropagation();
 	});
-	$('.activate-profile-tab').on('click', function(e){
+	$('.activate-profile-tab').on('click', function(e) {
 		$('#streamingTabNavList a[href="#userProfileInfo"]').tab('show');
-		$("html, body").animate({ scrollTop: $(".stream-desc-head").offset().top }, 0);
+		$("html, body").animate({scrollTop: $(".stream-desc-head").offset().top}, 0);
 	});
 </script>
 
@@ -1178,35 +1218,29 @@
 <script>
 	window.fbAsyncInit = function() {
 		FB.init({
-			appId      : '1530810963824108',
-			xfbml      : true,
-			version    : 'v2.3'
+			appId: '1530810963824108',
+			xfbml: true,
+			version: 'v2.3'
 		});
 	};
 
-	(function(d, s, id){
+	(function(d, s, id) {
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) {return;}
-		js = d.createElement(s); js.id = id;
+		js = d.createElement(s);
+		js.id = id;
 		js.src = "//connect.facebook.net/en_US/sdk.js";
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 </script>
 
 
-
-
-
 <script type="text/javascript" src="/static/js/jquery.cookiebar.js?h=927c382b"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function() {
 		$.cookieBar();
 	});
 </script>
-
-
-
-
 
 
 <script type="text/javascript" src="/static/js/showtour.js?h=fd038acf"></script>
@@ -1222,12 +1256,13 @@
 </script>
 
 
-
 <div class="update-browser-layer js-show-update-browser">
 	<div class="update-browser-bg"></div>
 	<div class="update-browser-content">
 		<img src="/static/img/error.png?h=d41dc829" alt="Error image">
-		<p>Sorry but your browser is out of date - please install a new browser such as <a href="https://www.google.com/chrome/" target="_blank">Google Chrome</a></p>
+
+		<p>Sorry but your browser is out of date - please install a new browser such as <a
+						href="https://www.google.com/chrome/" target="_blank">Google Chrome</a></p>
 	</div>
 </div>
 </body>

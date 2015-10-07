@@ -105,7 +105,7 @@ def parse_contents(html, effective_url=None):
         description=description,
         author_name=author,
 
-        canonical_url = effective_url,
+        canonical_url=effective_url,
 
         og_title=og_title,
         og_description=og_description,
