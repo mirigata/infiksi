@@ -1,4 +1,9 @@
 import bs4
+import requests
+import requests.exceptions
+
+class UnreachableError(Exception):
+    pass
 
 
 class OEmbedResponse(object):
@@ -27,6 +32,20 @@ class OEmbedResponse(object):
                 self.thumbnail_width = og_image_width
             if og_image_height and not thumbnail_height:
                 self.thumbnail_height = og_image_height
+
+
+def retrieve_html(url):
+    try:
+        result = requests.get(url)
+    except requests.exceptions.ConnectTimeout:
+        raise UnreachableError("Could not reach {}".format(url))
+
+    return result.text
+
+
+def get_metadata(url):
+    html = retrieve_html(url)
+    return parse_contents(html)
 
 
 def _get_meta_contents_by_name(soup, name):
@@ -73,3 +92,5 @@ def parse_contents(html):
         og_image_width=og_image_width,
         og_image_height=og_image_height,
     )
+
+
