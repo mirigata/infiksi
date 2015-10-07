@@ -24,7 +24,18 @@ class RetrieveHtmlTest(TestCase):
         self.assertEquals(html, expected)
 
     def test_non_existing_domain(self):
-
         with patch('requests.get') as mock:
             mock.side_effect = requests.exceptions.ConnectTimeout()
             self.assertRaises(infiksi.UnreachableError, infiksi.retrieve_html, "http://does-not-exist.example.com")
+
+    def test_server_error(self):
+        with patch('requests.get') as mock:
+            mock.return_value = MockResponse(500, '')
+            self.assertRaises(infiksi.TemporaryError, infiksi.retrieve_html, '...')
+
+    def test_page_does_not_exist(self):
+        with patch('requests.get') as mock:
+            mock.return_value = MockResponse(404, '')
+            self.assertRaises(infiksi.UnreachableError, infiksi.retrieve_html, '...')
+
+

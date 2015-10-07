@@ -2,7 +2,16 @@ import bs4
 import requests
 import requests.exceptions
 
-class UnreachableError(Exception):
+
+class InfiksiError(Exception):
+    pass
+
+
+class UnreachableError(InfiksiError):
+    pass
+
+
+class TemporaryError(InfiksiError):
     pass
 
 
@@ -34,17 +43,23 @@ class OEmbedResponse(object):
                 self.thumbnail_height = og_image_height
 
 
-def retrieve_html(url):
+def retrieve_html(url, timeout=1000):
     try:
-        result = requests.get(url)
-    except requests.exceptions.ConnectTimeout:
+        result = requests.get(url, timeout=(1.0 / timeout))
+    except requests.exceptions.ConnectionError:
         raise UnreachableError("Could not reach {}".format(url))
+
+    if result.status_code // 100 == 4:  # 4xx
+        raise UnreachableError()
+
+    if result.status_code // 100 == 5:  # 5xx
+        raise TemporaryError()
 
     return result.text
 
 
-def get_metadata(url):
-    html = retrieve_html(url)
+def get_metadata(url, timeout=1000):
+    html = retrieve_html(url, timeout)
     return parse_contents(html)
 
 
@@ -92,5 +107,3 @@ def parse_contents(html):
         og_image_width=og_image_width,
         og_image_height=og_image_height,
     )
-
-
