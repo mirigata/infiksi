@@ -48,12 +48,16 @@ def retrieve_html(url, timeout=1000):
         result = requests.get(url, timeout=(1.0 / timeout))
     except requests.exceptions.ConnectionError:
         raise UnreachableError("Could not reach {}".format(url))
+    except requests.exceptions.TooManyRedirects:
+        raise UnreachableError("Too many redirects while attempting to resolve {}".format(url))
+    except requests.exceptions.RequestException:
+        raise UnreachableError("Unknown error while trying to download {}".format(url))
 
     if result.status_code // 100 == 4:  # 4xx
-        raise UnreachableError()
+        raise UnreachableError("Could not find page {}, got status code {}".format(url, result.status_code))
 
     if result.status_code // 100 == 5:  # 5xx
-        raise TemporaryError()
+        raise TemporaryError("Could not find page {}, got status code {}".format(url, result.status_code))
 
     return result.text
 

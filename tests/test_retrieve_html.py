@@ -38,4 +38,13 @@ class RetrieveHtmlTest(TestCase):
             mock.return_value = MockResponse(404, '')
             self.assertRaises(infiksi.UnreachableError, infiksi.retrieve_html, '...')
 
+    def test_page_with_too_many_redirects(self):
+        with patch('requests.get') as mock:
+            mock.side_effect = requests.exceptions.TooManyRedirects()
+            self.assertRaises(infiksi.UnreachableError, infiksi.retrieve_html, '...')
+
+
+    # def test_page_lives_on_another_page(self):
+
+
 
