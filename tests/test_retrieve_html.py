@@ -7,7 +7,8 @@ from tests import utils
 
 
 class MockResponse(object):
-    def __init__(self, status_code, text):
+    def __init__(self, status_code, text, url=None):
+        self.url = url
         self.text = text
         self.status_code = status_code
 
@@ -18,10 +19,11 @@ class RetrieveHtmlTest(TestCase):
         expected = utils._load_fixture("medievalbooksnl_posters.html")
 
         with patch('requests.get') as mock:
-            mock.return_value = MockResponse(200, expected)
-            html = infiksi.retrieve_html("http://medievalbooks.nl/2015/09/04/medieval-posters/")
+            mock.return_value = MockResponse(200, expected, url='http://medievalbooks.nl/2015/09/04/medieval-posters/')
+            html, url = infiksi.retrieve_html("http://medievalbooks.nl/2015/09/04/medieval-posters/")
 
         self.assertEquals(html, expected)
+        self.assertEquals(url, 'http://medievalbooks.nl/2015/09/04/medieval-posters/')
 
     def test_non_existing_domain(self):
         with patch('requests.get') as mock:
@@ -43,8 +45,9 @@ class RetrieveHtmlTest(TestCase):
             mock.side_effect = requests.exceptions.TooManyRedirects()
             self.assertRaises(infiksi.UnreachableError, infiksi.retrieve_html, '...')
 
+    def test_page_with_redirected_result(self):
+        with patch('requests.get') as mock:
+            mock.return_value = MockResponse(200, '', url='http://blah')
+            html, url = infiksi.retrieve_html('...')
 
-    # def test_page_lives_on_another_page(self):
-
-
-
+            self.assertEquals(url, 'http://blah')

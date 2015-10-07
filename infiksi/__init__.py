@@ -16,10 +16,11 @@ class TemporaryError(InfiksiError):
 
 
 class OEmbedResponse(object):
-    def __init__(self, title=None, description=None, author_name=None,
+    def __init__(self, title=None, description=None, canonical_url=None, author_name=None,
                  og_title=None, og_description=None, og_image=None, og_image_width=None, og_image_height=None,
                  thumbnail_url=None, thumbnail_width=None, thumbnail_height=None,
                  ):
+        self.canonical_url = canonical_url
         self.og_image_height = og_image_height
         self.og_image_width = og_image_width
         self.og_image = og_image
@@ -59,12 +60,12 @@ def retrieve_html(url, timeout=1000):
     if result.status_code // 100 == 5:  # 5xx
         raise TemporaryError("Could not find page {}, got status code {}".format(url, result.status_code))
 
-    return result.text
+    return result.text, result.url
 
 
 def get_metadata(url, timeout=1000):
-    html = retrieve_html(url, timeout)
-    return parse_contents(html)
+    html, effective_url = retrieve_html(url, timeout)
+    return parse_contents(html, effective_url)
 
 
 def _get_meta_contents_by_name(soup, name):
@@ -83,7 +84,7 @@ def _get_meta_contents_by_property(soup, prop):
     return meta_tags[0].attrs['content']
 
 
-def parse_contents(html):
+def parse_contents(html, effective_url=None):
     soup = bs4.BeautifulSoup(html, 'html.parser')
     title = soup.title.text if soup.title else None
     description = _get_meta_contents_by_name(soup, "description")
@@ -103,6 +104,8 @@ def parse_contents(html):
         title=title,
         description=description,
         author_name=author,
+
+        canonical_url = effective_url,
 
         og_title=og_title,
         og_description=og_description,

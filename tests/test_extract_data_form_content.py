@@ -6,11 +6,12 @@ from tests.utils import _load_fixture
 
 class ContentExtractionTest(TestCase):
     def test_extract_empty_html(self):
-        result = infiksi.parse_contents(_load_fixture("empty.html"))
+        result = infiksi.parse_contents(_load_fixture("empty.html"), 'http://effective')
         self.assertIsNotNone(result)
 
         self.assertEquals(result.version, '1.0')
         self.assertEquals(result.type, 'article')
+        self.assertEquals(result.canonical_url, 'http://effective')
 
     def test_extract_from_title(self):
         result = infiksi.parse_contents(_load_fixture("beautifulpage.html"))
