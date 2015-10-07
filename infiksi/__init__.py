@@ -44,9 +44,9 @@ class OEmbedResponse(object):
                 self.thumbnail_height = og_image_height
 
 
-def retrieve_html(url, timeout=1000):
+def retrieve_html(url, timeout=2000):
     try:
-        result = requests.get(url, timeout=(1.0 / timeout))
+        result = requests.get(url, timeout=(timeout/1000.0))
     except requests.exceptions.ConnectionError:
         raise UnreachableError("Could not reach {}".format(url))
     except requests.exceptions.TooManyRedirects:
@@ -63,7 +63,7 @@ def retrieve_html(url, timeout=1000):
     return result.text, result.url
 
 
-def get_metadata(url, timeout=1000):
+def get_metadata(url, timeout=2000):
     html, effective_url = retrieve_html(url, timeout)
     return parse_contents(html, effective_url)
 
