@@ -2,7 +2,7 @@ FROM python:3
 MAINTAINER yigal@publysher.nl
 
 WORKDIR /app/infiksi
-EXPOSE 8000
+EXPOSE 8080
 
 RUN pip install uwsgi
 
