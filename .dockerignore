@@ -1,0 +1,6 @@
+Dockerfile
+.git*
+.idea*
+dist/
+*.egg-info
+*.iml
