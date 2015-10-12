@@ -1,6 +1,10 @@
+import logging
 import bs4
 import requests
 import requests.exceptions
+
+
+log = logging.getLogger(__name__)
 
 
 class InfiksiError(Exception):
@@ -12,6 +16,10 @@ class UnreachableError(InfiksiError):
 
 
 class TemporaryError(InfiksiError):
+    pass
+
+
+class TimeoutError(InfiksiError):
     pass
 
 
@@ -51,14 +59,17 @@ def retrieve_html(url, timeout=2000):
         raise UnreachableError("Could not reach {}".format(url))
     except requests.exceptions.TooManyRedirects:
         raise UnreachableError("Too many redirects while attempting to resolve {}".format(url))
-    except requests.exceptions.RequestException:
+    except requests.exceptions.ReadTimeout:
+        raise TimeoutError("Timeout occurred while trying to reach {}".format(url))
+    except requests.exceptions.RequestException as e:
+        log.exception("Unknown error")
         raise UnreachableError("Unknown error while trying to download {}".format(url))
 
     if result.status_code // 100 == 4:  # 4xx
         raise UnreachableError("Could not find page {}, got status code {}".format(url, result.status_code))
 
     if result.status_code // 100 == 5:  # 5xx
-        raise TemporaryError("Could not find page {}, got status code {}".format(url, result.status_code))
+        raise TemporaryError("Could not extract metadata from {}, got status code {}".format(url, result.status_code))
 
     return result.text, result.url
 

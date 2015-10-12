@@ -49,5 +49,9 @@ setup(
         'requests',
     ],
 
+    extras_require = {
+        'server': ['flask'],
+    },
+
     test_suite="tests",
 )
