@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+
 import infiksi
 
 
@@ -18,6 +19,11 @@ def get_metadata():
         return jsonify(error=str(e)), 502
     except infiksi.TimeoutError as e:
         return jsonify(error=str(e)), 504
+
+
+@app.route("/status/ping")
+def ping():
+    return "ok"
 
 
 if __name__ == "__main__":
